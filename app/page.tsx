@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import type { UserInput, LottoResult } from '@/types/saju';
 import { generateLotto } from '@/lib/lotto/generator';
 import { renderInterpretation, type SajuInterpretation } from '@/lib/interpretation/render';
@@ -26,8 +25,10 @@ export default function Home() {
 
     setTimeout(() => {
       try {
-        const r = generateLotto(input);
-        const interp = renderInterpretation(r.saju, r.main, r.bonus, r.seed);
+        const today = new Date();
+        const r = generateLotto(input, today);
+        const birthDate = new Date(input.birthDate + 'T00:00:00Z');
+        const interp = renderInterpretation(r.saju, r.main, r.bonus, r.seed, birthDate, today);
         setResult(r);
         setInterpretation(interp);
         setView('result');
@@ -192,16 +193,6 @@ function ResultView({
 function Footer() {
   return (
     <footer className="mt-16 pt-8 border-t border-gold-400/15 text-center text-xs text-white/50 leading-relaxed">
-      <nav className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-1 text-white/60" aria-label="사이트 네비게이션">
-        <Link href="/about" className="hover:text-gold-400 transition focus-visible:text-gold-400">소개</Link>
-        <Link href="/guide/saju" className="hover:text-gold-400 transition focus-visible:text-gold-400">사주 개론</Link>
-        <Link href="/guide/elements" className="hover:text-gold-400 transition focus-visible:text-gold-400">오행 가이드</Link>
-        <Link href="/guide/lucky-numbers" className="hover:text-gold-400 transition focus-visible:text-gold-400">행운의 숫자</Link>
-        <Link href="/guide/lunar-calendar" className="hover:text-gold-400 transition focus-visible:text-gold-400">음력 vs 양력</Link>
-        <Link href="/privacy" className="hover:text-gold-400 transition focus-visible:text-gold-400">개인정보</Link>
-        <Link href="/terms" className="hover:text-gold-400 transition focus-visible:text-gold-400">이용약관</Link>
-        <Link href="/contact" className="hover:text-gold-400 transition focus-visible:text-gold-400">문의</Link>
-      </nav>
       <p className="mb-2">
         본 서비스는 <span className="text-gold-400/80">엔터테인먼트 목적</span>으로 제공되며,
         <br />
