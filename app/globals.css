@@ -112,3 +112,81 @@ body {
   background: rgba(230, 185, 77, 0.4);
   color: #fff;
 }
+
+.prose-mystic h2 {
+  color: #f7d774;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.prose-mystic h2:first-child { margin-top: 0; }
+
+.prose-mystic h3 {
+  color: #f7d774;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-mystic p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+
+.prose-mystic ul, .prose-mystic ol {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+  padding-left: 1.5rem;
+}
+
+.prose-mystic ul li { list-style-type: disc; margin-bottom: 0.3rem; }
+.prose-mystic ol li { list-style-type: decimal; margin-bottom: 0.3rem; }
+
+.prose-mystic a {
+  color: #f7d774;
+  text-decoration: underline;
+  text-decoration-color: rgba(247, 215, 116, 0.4);
+  text-underline-offset: 3px;
+}
+
+.prose-mystic a:hover { text-decoration-color: #f7d774; }
+
+.prose-mystic strong { color: #ffe79a; font-weight: 700; }
+
+.prose-mystic table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.prose-mystic th, .prose-mystic td {
+  border: 1px solid rgba(230, 185, 77, 0.25);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+}
+
+.prose-mystic th {
+  background: rgba(230, 185, 77, 0.1);
+  color: #f7d774;
+}
+
+.prose-mystic blockquote {
+  border-left: 3px solid rgba(230, 185, 77, 0.5);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+:focus-visible {
+  outline: 2px solid #f7d774;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

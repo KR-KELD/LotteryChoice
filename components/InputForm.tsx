@@ -34,29 +34,35 @@ export default function InputForm({ onSubmit }: Props) {
   const canSubmit = name.trim().length > 0 && birthDate.length > 0;
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <Field label="이름 또는 닉네임">
+    <form onSubmit={handleSubmit} className="space-y-5" aria-label="사주 입력 폼">
+      <Field label="이름 또는 닉네임" htmlFor="name-input">
         <input
+          id="name-input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           maxLength={20}
           placeholder="홍길동"
+          autoComplete="name"
           className="input-mystic w-full rounded-lg px-4 py-3"
           required
+          aria-required="true"
         />
       </Field>
 
-      <Field label="생년월일">
+      <Field label="생년월일" htmlFor="birth-date">
         <div className="space-y-2">
           <input
+            id="birth-date"
             type="date"
             value={birthDate}
             onChange={(e) => setBirthDate(e.target.value)}
             min="1900-01-01"
             max="2099-12-31"
+            autoComplete="bday"
             className="input-mystic w-full rounded-lg px-4 py-3"
             required
+            aria-required="true"
           />
           <div className="flex gap-4 pl-1 text-sm">
             <label className="flex items-center gap-2 cursor-pointer">
@@ -150,10 +156,23 @@ export default function InputForm({ onSubmit }: Props) {
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({
+  label,
+  children,
+  htmlFor,
+}: {
+  label: string;
+  children: React.ReactNode;
+  htmlFor?: string;
+}) {
   return (
     <div>
-      <label className="mb-2 block text-sm font-medium text-gold-400/90 tracking-wide">{label}</label>
+      <label
+        htmlFor={htmlFor}
+        className="mb-2 block text-sm font-medium text-gold-400/90 tracking-wide"
+      >
+        {label}
+      </label>
       {children}
     </div>
   );

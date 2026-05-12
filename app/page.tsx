@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import type { UserInput, LottoResult } from '@/types/saju';
 import { generateLotto } from '@/lib/lotto/generator';
 import { renderInterpretation, type SajuInterpretation } from '@/lib/interpretation/render';
@@ -91,10 +92,13 @@ function Header() {
 function InputView({ onSubmit }: { onSubmit: (input: UserInput) => void }) {
   return (
     <div className="card-mystic rounded-2xl p-6 sm:p-8 animate-fade-in-up">
-      <p className="text-center text-sm text-white/60 mb-6">
+      <p className="text-center text-sm text-white/60 mb-2">
         당신의 사주와 이름을 풀어
         <br className="sm:hidden" />
         오늘의 행운 번호 6개를 찾아드립니다.
+      </p>
+      <p className="text-center text-xs text-gold-400/60 mb-6">
+        ※ 같은 사람·같은 날에는 같은 번호가 나옵니다 (재방문 시 일관성 보장)
       </p>
       <InputForm onSubmit={onSubmit} />
     </div>
@@ -103,12 +107,17 @@ function InputView({ onSubmit }: { onSubmit: (input: UserInput) => void }) {
 
 function LoadingView() {
   return (
-    <div className="flex flex-col items-center justify-center py-16 animate-fade-in-up">
+    <div
+      className="flex flex-col items-center justify-center py-16 animate-fade-in-up"
+      role="status"
+      aria-live="polite"
+      aria-busy="true"
+    >
       <Bagua size={140} spinning />
       <p className="mt-8 text-gold-400 tracking-widest text-sm animate-glow-pulse">
         사주를 풀고 있습니다…
       </p>
-      <div className="mt-2 text-white/50 text-xs tracking-wider">
+      <div className="mt-2 text-white/50 text-xs tracking-wider" aria-hidden>
         天 · 地 · 人 · 時
       </div>
     </div>
@@ -146,7 +155,7 @@ function ResultView({
   };
 
   return (
-    <div className="space-y-8 animate-fade-in-up">
+    <div className="space-y-8 animate-fade-in-up" role="region" aria-live="polite" aria-label="로또 번호 결과">
       <div className="card-mystic rounded-2xl p-6 text-center">
         <p className="text-sm text-gold-400/80 tracking-widest mb-1">오늘의 행운 번호</p>
         <p className="text-xs text-white/50 mb-6">
@@ -183,6 +192,16 @@ function ResultView({
 function Footer() {
   return (
     <footer className="mt-16 pt-8 border-t border-gold-400/15 text-center text-xs text-white/50 leading-relaxed">
+      <nav className="mb-4 flex flex-wrap justify-center gap-x-4 gap-y-1 text-white/60" aria-label="사이트 네비게이션">
+        <Link href="/about" className="hover:text-gold-400 transition focus-visible:text-gold-400">소개</Link>
+        <Link href="/guide/saju" className="hover:text-gold-400 transition focus-visible:text-gold-400">사주 개론</Link>
+        <Link href="/guide/elements" className="hover:text-gold-400 transition focus-visible:text-gold-400">오행 가이드</Link>
+        <Link href="/guide/lucky-numbers" className="hover:text-gold-400 transition focus-visible:text-gold-400">행운의 숫자</Link>
+        <Link href="/guide/lunar-calendar" className="hover:text-gold-400 transition focus-visible:text-gold-400">음력 vs 양력</Link>
+        <Link href="/privacy" className="hover:text-gold-400 transition focus-visible:text-gold-400">개인정보</Link>
+        <Link href="/terms" className="hover:text-gold-400 transition focus-visible:text-gold-400">이용약관</Link>
+        <Link href="/contact" className="hover:text-gold-400 transition focus-visible:text-gold-400">문의</Link>
+      </nav>
       <p className="mb-2">
         본 서비스는 <span className="text-gold-400/80">엔터테인먼트 목적</span>으로 제공되며,
         <br />

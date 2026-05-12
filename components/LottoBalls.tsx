@@ -19,11 +19,14 @@ function Ball({ meta, size = 64, delay = 0, bonus = false }: BallProps) {
   const colors = COLOR_MAP[meta.color];
   const gradId = `grad-${meta.number}-${bonus ? 'b' : 'm'}`;
   const shineId = `shine-${meta.number}-${bonus ? 'b' : 'm'}`;
+  const label = bonus ? `보너스 번호 ${meta.number}` : `행운 번호 ${meta.number}`;
 
   return (
     <div
       className="relative inline-block animate-ball-pop opacity-0"
       style={{ animationDelay: `${delay}ms`, width: size, height: size }}
+      role="img"
+      aria-label={label}
     >
       {bonus && (
         <div

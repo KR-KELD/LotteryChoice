@@ -71,8 +71,8 @@ export function renderInterpretation(
   const dayStem = saju.day.stem;
   const dayElement = saju.day.stemElement;
 
-  const identity = `${DAY_STEM_DESCRIPTIONS[dayStem]} 당신`;
-  const todayEnergy = DAY_STEM_TODAY_ENERGY[dayStem];
+  const identity = `${pickOne(DAY_STEM_DESCRIPTIONS[dayStem], rng)} 당신`;
+  const todayEnergy = pickOne(DAY_STEM_TODAY_ENERGY[dayStem], rng);
 
   const pillars = ['년주', '월주', '일주', '시주'];
 
