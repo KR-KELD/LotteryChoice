@@ -68,7 +68,7 @@ function Ball({ meta, size = 64, delay = 0, bonus = false }: BallProps) {
       </svg>
       {bonus && (
         <div
-          className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-gold-500 px-2 py-0.5 text-[10px] font-bold text-ink-900"
+          className="absolute -top-[22px] left-1/2 -translate-x-1/2 rounded-full bg-gold-500 px-2 py-1 text-[10px] leading-none font-bold text-ink-900 whitespace-nowrap shadow-md"
         >
           보너스
         </div>
@@ -84,7 +84,7 @@ interface LottoBallsProps {
 
 export default function LottoBalls({ main, bonus }: LottoBallsProps) {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-4">
       {main.map((meta, i) => (
         <Ball key={meta.number} meta={meta} size={56} delay={i * 120} />
       ))}
