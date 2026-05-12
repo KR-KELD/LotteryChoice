@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/PretendardVariable.woff2') format('woff2-variations');
+}
+
+:root {
+  --color-ink: #0a0820;
+  --color-gold: #e6b94d;
+}
+
+html, body {
+  background: var(--color-ink);
+  color: #f5f0e0;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'ss01' on, 'cv11' on;
+}
+
+body {
+  font-family: 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ffe79a 0%, #e6b94d 50%, #c89a30 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hanja {
+  font-family: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+  letter-spacing: 0.05em;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes drift {
+  from { transform: translateX(0) translateY(0); }
+  to { transform: translateX(20px) translateY(-15px); }
+}
+
+.constellation {
+  animation: drift 30s ease-in-out infinite alternate;
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 20px rgba(230, 185, 77, 0.4),
+    0 0 40px rgba(230, 185, 77, 0.2),
+    inset 0 0 12px rgba(255, 231, 154, 0.3);
+}
+
+.card-mystic {
+  background: linear-gradient(180deg, rgba(58, 40, 115, 0.4) 0%, rgba(15, 12, 42, 0.6) 100%);
+  border: 1px solid rgba(230, 185, 77, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.input-mystic {
+  background: rgba(10, 8, 32, 0.6);
+  border: 1px solid rgba(230, 185, 77, 0.25);
+  color: #f5f0e0;
+  transition: all 0.2s ease;
+}
+
+.input-mystic:focus {
+  outline: none;
+  border-color: rgba(230, 185, 77, 0.7);
+  box-shadow: 0 0 0 3px rgba(230, 185, 77, 0.15);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #ffe79a 0%, #e6b94d 50%, #c89a30 100%);
+  color: #1d1846;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(230, 185, 77, 0.3);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(230, 185, 77, 0.5);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+::selection {
+  background: rgba(230, 185, 77, 0.4);
+  color: #fff;
+}

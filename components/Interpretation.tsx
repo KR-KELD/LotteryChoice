@@ -1,0 +1,94 @@
+import type { LottoResult } from '@/types/saju';
+import type { SajuInterpretation } from '@/lib/interpretation/render';
+import { STEM_KOREAN, BRANCH_KOREAN } from '@/lib/saju/constants';
+
+interface Props {
+  result: LottoResult;
+  interpretation: SajuInterpretation;
+  userName: string;
+}
+
+function formatPillar(stem: string, branch: string) {
+  const s = STEM_KOREAN[stem as keyof typeof STEM_KOREAN];
+  const b = BRANCH_KOREAN[branch as keyof typeof BRANCH_KOREAN];
+  return { hanja: `${stem}${branch}`, hangul: `${s}${b}` };
+}
+
+export default function Interpretation({ result, interpretation, userName }: Props) {
+  const { saju } = result;
+  const pillars = [
+    { label: '년주', ...formatPillar(saju.year.stem, saju.year.branch) },
+    { label: '월주', ...formatPillar(saju.month.stem, saju.month.branch) },
+    { label: '일주', ...formatPillar(saju.day.stem, saju.day.branch) },
+    saju.hour
+      ? { label: '시주', ...formatPillar(saju.hour.stem, saju.hour.branch) }
+      : null,
+  ].filter(Boolean) as Array<{ label: string; hanja: string; hangul: string }>;
+
+  return (
+    <div className="space-y-8">
+      <section className="card-mystic rounded-2xl p-6 animate-fade-in-up">
+        <p className="text-sm text-gold-400/80 tracking-wider mb-1">{interpretation.opener}</p>
+        <h2 className="text-xl sm:text-2xl font-semibold leading-relaxed">
+          <span className="text-gold-gradient font-bold">{userName}</span>님,
+          <br />
+          {interpretation.identity}.
+        </h2>
+        <p className="mt-3 text-base text-white/85 leading-relaxed">
+          {interpretation.todayEnergy}
+        </p>
+      </section>
+
+      <section className="card-mystic rounded-2xl p-6">
+        <h3 className="text-sm text-gold-400/80 tracking-widest mb-4">당신의 사주</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {pillars.map((p) => (
+            <div key={p.label} className="text-center">
+              <div className="text-xs text-white/50 mb-1">{p.label}</div>
+              <div className="hanja text-3xl text-gold-400 leading-none">{p.hanja}</div>
+              <div className="text-xs text-white/60 mt-1">{p.hangul}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 className="text-sm text-gold-400/80 tracking-widest mb-4 px-2">번호 풀이</h3>
+        <ul className="space-y-2">
+          {interpretation.numbers.map((n, idx) => (
+            <li
+              key={n.number}
+              className="card-mystic flex items-center gap-4 rounded-xl p-4 animate-fade-in-up"
+              style={{ animationDelay: `${idx * 80}ms`, animationFillMode: 'both', opacity: 0 }}
+            >
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold-500/15 border border-gold-400/40 flex items-center justify-center font-bold text-gold-400">
+                {n.number}
+              </div>
+              <p className="text-sm sm:text-base text-white/85 leading-relaxed flex-1">
+                {n.reason}
+              </p>
+            </li>
+          ))}
+          <li
+            className="card-mystic flex items-center gap-4 rounded-xl p-4 border-gold-400/60 animate-fade-in-up"
+            style={{ animationDelay: '560ms', animationFillMode: 'both', opacity: 0, borderColor: 'rgba(230,185,77,0.5)' }}
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold-400/30 border border-gold-400 flex items-center justify-center font-bold text-gold-400">
+              {interpretation.bonus.number}
+            </div>
+            <p className="text-sm sm:text-base text-white/85 leading-relaxed flex-1">
+              <span className="text-gold-400 font-semibold">[보너스] </span>
+              {interpretation.bonus.reason}
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section className="text-center px-4">
+        <p className="text-base sm:text-lg text-gold-400/90 italic leading-relaxed">
+          “{interpretation.closure}”
+        </p>
+      </section>
+    </div>
+  );
+}
