@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '행운의 숫자, 사주에서 어떻게 찾을까 · 로또 포춘',
+  title: '행운의 숫자, 사주에서 어떻게 찾을까 · LotteryChoice',
   description: '동양 점술에서 말하는 행운의 숫자란 무엇이며, 사주와 오행이 숫자 선택에 어떻게 연결되는지 설명합니다.',
   keywords: ['행운의 숫자', '사주 숫자', '오행 숫자', '로또 번호 찾는 법'],
 };
@@ -73,7 +73,7 @@ export default function LuckyNumbersPage() {
         결과가 좋든 나쁘든, 오늘 하루를 가볍게 즐기는 도구로 받아들이면 좋겠습니다.
       </p>
 
-      <h2>로또 포춘은 어떻게 행운 숫자를 골라내나요?</h2>
+      <h2>LotteryChoice은 어떻게 행운 숫자를 골라내나요?</h2>
       <p>
         본 서비스는 사주 8글자 전체를 해시(hash)에 넣어 결정론적인 시드(seed)를 만든 뒤,
         Mulberry32 알고리즘으로 무작위 셔플을 수행합니다. 그래서:

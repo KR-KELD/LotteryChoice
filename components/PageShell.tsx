@@ -17,9 +17,9 @@ export default function PageShell({ title, subtitle, children }: Props) {
           <nav className="mb-8 flex items-center justify-between">
             <Link
               href="/"
-              className="hanja text-xl sm:text-2xl font-bold text-gold-gradient hover:opacity-90 transition"
+              className="text-xl sm:text-2xl font-bold text-gold-gradient hover:opacity-90 transition tracking-tight"
             >
-              로또 포춘
+              LotteryChoice
             </Link>
             <Link
               href="/"
@@ -30,7 +30,7 @@ export default function PageShell({ title, subtitle, children }: Props) {
           </nav>
 
           <header className="text-center mb-8">
-            <h1 className="hanja text-3xl sm:text-4xl font-bold text-gold-gradient leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gold-gradient leading-tight tracking-tight">
               {title}
             </h1>
             {subtitle && (
@@ -70,7 +70,7 @@ function SiteFooter() {
         도박 문제 상담: <span className="text-gold-400/70">한국도박문제예방치유원 ☎ 1336</span>
       </p>
       <p className="mt-4 text-white/30 text-[10px]">
-        © 2026 Lotto Fortune · 입력 정보는 서버로 전송되지 않습니다
+        © 2026 LotteryChoice · 입력 정보는 서버로 전송되지 않습니다
       </p>
     </footer>
   );

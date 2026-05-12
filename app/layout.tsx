@@ -6,7 +6,7 @@ const SITE_URL = 'https://kr-keld.github.io/LotteryChoice';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: '로또 포춘 · 사주로 보는 행운의 번호',
+    default: 'LotteryChoice · 사주로 보는 행운의 번호',
     template: '%s',
   },
   description: '당신의 사주와 오늘의 기운이 들려주는 행운의 로또 번호 6+1. 엔터테인먼트 목적의 사주 명리학 기반 번호 추천 서비스.',
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: SITE_URL,
-    title: '로또 포춘 · 사주로 보는 행운의 번호',
+    title: 'LotteryChoice · 사주로 보는 행운의 번호',
     description: '당신의 사주와 오늘의 기운이 들려주는 행운의 로또 번호',
-    siteName: '로또 포춘',
+    siteName: 'LotteryChoice',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '로또 포춘 · 사주로 보는 행운의 번호',
+    title: 'LotteryChoice · 사주로 보는 행운의 번호',
     description: '당신의 사주와 오늘의 기운이 들려주는 행운의 로또 번호',
   },
   robots: {
@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '로또 포춘',
+  name: 'LotteryChoice',
   description: '사주와 오늘의 기운을 풀어 행운의 로또 번호를 추천하는 엔터테인먼트 웹앱',
   url: SITE_URL,
   applicationCategory: 'EntertainmentApplication',

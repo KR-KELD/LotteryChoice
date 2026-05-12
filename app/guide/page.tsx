@@ -3,7 +3,7 @@ import Link from 'next/link';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '사주와 행운의 숫자 가이드 · 로또 포춘',
+  title: '사주와 행운의 숫자 가이드 · LotteryChoice',
   description: '사주 명리학과 오행, 행운의 숫자에 대한 입문 가이드 모음. 사주 입문자도 부담 없이 읽을 수 있는 안내서입니다.',
 };
 
@@ -34,7 +34,7 @@ export default function GuideIndexPage() {
   return (
     <PageShell title="사주 가이드" subtitle="명리학 입문, 부담 없이 읽는 안내서">
       <p>
-        로또 포춘은 사주 명리학의 기초 개념을 바탕으로 행운의 번호를 추천합니다.
+        LotteryChoice은 사주 명리학의 기초 개념을 바탕으로 행운의 번호를 추천합니다.
         결과를 더 깊이 즐기시려면 아래 가이드를 가볍게 훑어보세요.
       </p>
 

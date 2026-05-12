@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '문의 · 로또 포춘',
-  description: '로또 포춘 운영자에게 문의하거나 피드백을 보낼 수 있는 페이지입니다.',
+  title: '문의 · LotteryChoice',
+  description: 'LotteryChoice 운영자에게 문의하거나 피드백을 보낼 수 있는 페이지입니다.',
 };
 
 export default function ContactPage() {

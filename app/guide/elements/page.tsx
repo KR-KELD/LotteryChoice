@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '오행(五行) 가이드 — 木火土金水 · 로또 포춘',
+  title: '오행(五行) 가이드 — 木火土金水 · LotteryChoice',
   description: '동양 사상의 핵심인 오행(목·화·토·금·수)이 무엇이며 사주와 일상에 어떻게 적용되는지 정리한 입문서입니다.',
   keywords: ['오행', '목화토금수', '상생상극', '사주 오행', '음양오행'],
 };
@@ -100,9 +100,9 @@ export default function ElementsGuidePage() {
         취할 만큼 취하시면 좋겠습니다.
       </p>
 
-      <h2>로또 포춘에서의 오행</h2>
+      <h2>LotteryChoice에서의 오행</h2>
       <p>
-        <a href="/">로또 포춘</a>은 각 번호에 천간을 매핑하고, 그 천간의 오행을 부여합니다.
+        <a href="/">LotteryChoice</a>은 각 번호에 천간을 매핑하고, 그 천간의 오행을 부여합니다.
         결과 페이지에서 &ldquo;火(화) 기운이 깃든 번호&rdquo;와 같은 해석이 나오는 이유입니다.
         오행의 흐름을 따라 결과를 음미해보세요.
       </p>

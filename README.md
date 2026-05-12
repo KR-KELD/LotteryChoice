@@ -1,4 +1,4 @@
-# 🎰 로또 포춘 (Lotto Fortune)
+# 🎰 LotteryChoice
 
 사주와 오늘의 기운을 기반으로 행운의 로또 번호 6+1을 추천하는 엔터테인먼트 웹사이트.
 
@@ -41,9 +41,9 @@ npm run build
 ```powershell
 git init
 git add .
-git commit -m "init lotto-fortune"
+git commit -m "init lotterychoice"
 git branch -M main
-git remote add origin https://github.com/<USERNAME>/lotto-fortune.git
+git remote add origin https://github.com/<USERNAME>/LotteryChoice.git
 git push -u origin main
 ```
 
@@ -53,7 +53,7 @@ git push -u origin main
 
 ### 3. 자동 배포
 `main` 브랜치에 push 하면 `.github/workflows/deploy.yml` 워크플로우가 자동 실행되어
-`https://<USERNAME>.github.io/lotto-fortune/` 에 배포됩니다.
+`https://<USERNAME>.github.io/LotteryChoice/` 에 배포됩니다.
 
 ### 저장소 이름이 다를 때
 `next.config.mjs` 의 `repo` 상수를 실제 저장소 이름으로 수정해주세요.

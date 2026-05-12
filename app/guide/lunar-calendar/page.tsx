@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '음력과 양력, 사주는 어느 쪽? · 로또 포춘',
+  title: '음력과 양력, 사주는 어느 쪽? · LotteryChoice',
   description: '사주는 음력 생일로 보는지 양력으로 보는지, 절기와 24절기의 관계는 어떻게 되는지 명확히 정리한 가이드입니다.',
   keywords: ['음력 사주', '양력 사주', '24절기', '입춘', '사주 기준일'],
 };

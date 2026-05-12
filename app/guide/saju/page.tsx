@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '사주(四柱)란 무엇인가 · 로또 포춘',
+  title: '사주(四柱)란 무엇인가 · LotteryChoice',
   description: '사주명리학의 기초 — 천간과 지지, 60갑자, 4기둥 8글자가 무엇을 의미하는지 입문자도 이해할 수 있도록 설명합니다.',
   keywords: ['사주', '사주풀이', '명리학', '천간', '지지', '60갑자', '4기둥'],
 };
@@ -113,7 +113,7 @@ export default function SajuGuidePage() {
       </p>
 
       <p>
-        본 사이트의 <a href="/">로또 포춘</a>은 이러한 사주의 기운을 가볍게 빌려와,
+        본 사이트의 <a href="/">LotteryChoice</a>은 이러한 사주의 기운을 가볍게 빌려와,
         오늘 하루의 분위기와 함께 즐길 수 있는 <strong>엔터테인먼트 콘텐츠</strong>로 제공됩니다.
       </p>
     </PageShell>

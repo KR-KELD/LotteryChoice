@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '소개 · 로또 포춘',
-  description: '로또 포춘은 한국 전통 사주 명리학을 기반으로 행운의 번호를 추천하는 엔터테인먼트 웹사이트입니다.',
+  title: '소개 · LotteryChoice',
+  description: 'LotteryChoice은 한국 전통 사주 명리학을 기반으로 행운의 번호를 추천하는 엔터테인먼트 웹사이트입니다.',
 };
 
 export default function AboutPage() {
   return (
-    <PageShell title="로또 포춘 소개" subtitle="사주 명리학과 디지털이 만난 자리">
+    <PageShell title="LotteryChoice 소개" subtitle="사주 명리학과 디지털이 만난 자리">
       <h2>한 줄로</h2>
       <p>
         <strong>사주 8글자와 오늘의 기운을 풀어 행운의 로또 번호 6+1을 추천하는</strong>{' '}

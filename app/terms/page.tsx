@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '이용약관 · 로또 포춘',
-  description: '로또 포춘 이용약관 — 서비스는 엔터테인먼트 목적으로 제공됩니다.',
+  title: '이용약관 · LotteryChoice',
+  description: 'LotteryChoice 이용약관 — 서비스는 엔터테인먼트 목적으로 제공됩니다.',
 };
 
 export default function TermsPage() {
@@ -11,7 +11,7 @@ export default function TermsPage() {
     <PageShell title="이용약관" subtitle="시행일: 2026년 5월 12일">
       <h2>제1조 (목적)</h2>
       <p>
-        본 약관은 로또 포춘(이하 &ldquo;서비스&rdquo;)이 제공하는 사주 기반 로또 번호 추천 서비스의
+        본 약관은 LotteryChoice(이하 &ldquo;서비스&rdquo;)이 제공하는 사주 기반 로또 번호 추천 서비스의
         이용 조건과 절차, 이용자와 서비스 운영자 간의 권리·의무 및 책임사항을 규정함을
         목적으로 합니다.
       </p>

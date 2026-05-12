@@ -79,8 +79,8 @@ function Header() {
       <div className="mb-3 inline-flex items-center justify-center">
         <Bagua size={56} />
       </div>
-      <h1 className="hanja text-4xl sm:text-5xl font-bold text-gold-gradient leading-tight">
-        로또 포춘
+      <h1 className="text-4xl sm:text-5xl font-bold text-gold-gradient leading-tight tracking-tight">
+        LotteryChoice
       </h1>
       <p className="mt-2 text-sm sm:text-base text-white/70 tracking-wide">
         사주와 오늘의 기운이 알려주는 행운의 번호
@@ -137,11 +137,11 @@ function ResultView({
   onReset: () => void;
 }) {
   const handleShare = async () => {
-    const text = `🔮 ${userName}님의 오늘의 행운 번호\n${result.main.map((m) => m.number).join(' · ')} + ${result.bonus.number}\n\n로또 포춘에서 사주로 뽑은 번호입니다.`;
+    const text = `🔮 ${userName}님의 오늘의 행운 번호\n${result.main.map((m) => m.number).join(' · ')} + ${result.bonus.number}\n\nLotteryChoice에서 사주로 뽑은 번호입니다.`;
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: '로또 포춘', text });
+        await navigator.share({ title: 'LotteryChoice', text });
       } catch {
         // user cancelled
       }
@@ -203,7 +203,7 @@ function Footer() {
         도박 문제 상담: <span className="text-gold-400/70">한국도박문제예방치유원 ☎ 1336</span>
       </p>
       <p className="mt-4 text-white/30 text-[10px]">
-        © 2026 Lotto Fortune · 입력 정보는 서버로 전송되지 않습니다
+        © 2026 LotteryChoice · 입력 정보는 서버로 전송되지 않습니다
       </p>
     </footer>
   );

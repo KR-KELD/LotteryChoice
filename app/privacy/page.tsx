@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
-  title: '개인정보 처리방침 · 로또 포춘',
-  description: '로또 포춘은 사용자 입력 정보를 서버로 전송하지 않으며, 어떠한 개인정보도 수집·저장하지 않습니다.',
+  title: '개인정보 처리방침 · LotteryChoice',
+  description: 'LotteryChoice은 사용자 입력 정보를 서버로 전송하지 않으며, 어떠한 개인정보도 수집·저장하지 않습니다.',
 };
 
 export default function PrivacyPage() {
@@ -11,7 +11,7 @@ export default function PrivacyPage() {
     <PageShell title="개인정보 처리방침" subtitle="시행일: 2026년 5월 12일">
       <h2>1. 수집하는 개인정보 항목 및 방법</h2>
       <p>
-        <strong>로또 포춘은 어떠한 개인정보도 서버로 전송하거나 저장하지 않습니다.</strong>
+        <strong>LotteryChoice은 어떠한 개인정보도 서버로 전송하거나 저장하지 않습니다.</strong>
       </p>
       <p>
         사용자가 서비스 이용 중 입력하는 정보(이름 또는 닉네임, 생년월일, 출생 시각, 성별)는
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
 
       <h2>4. 쿠키</h2>
       <p>
-        로또 포춘 자체는 쿠키를 사용하지 않습니다. 다만 위 3항의 광고 서비스가 활성화될 경우,
+        LotteryChoice 자체는 쿠키를 사용하지 않습니다. 다만 위 3항의 광고 서비스가 활성화될 경우,
         Google이 광고 목적의 쿠키를 사용할 수 있습니다.
       </p>
 
